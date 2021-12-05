@@ -1,0 +1,29 @@
+:root {
+    --main-color: #806464;
+    --main-color-opacity: #cb9999;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+#root {
+    min-height: 100vh;
+}
+
+.standart-color-select ul.dropdown-content li:not(.disabled) span,
+.standart-color-select .select-dropdown.dropdown-trigger {
+    color: #806464 !important;
+}
+
+.main-color-content {
+    color: var(--main-color);
+}

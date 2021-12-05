@@ -1,0 +1,9 @@
+:root {
+    --size: 120px;
+}
+
+.UserAvatar .photo {
+    height: var(--size);
+    width: var(--size);
+    border: 1px solid #806464;
+}

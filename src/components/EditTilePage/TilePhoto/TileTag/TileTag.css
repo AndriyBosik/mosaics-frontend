@@ -1,0 +1,14 @@
+.TileTag {
+    margin-right: 4px !important;
+    margin-top: 2px !important;
+    margin-bottom: 2px !important;
+    transition: all 0.2s;
+}
+
+.TileTag .remove-tag {
+    margin-left: 5px;
+}
+
+.TileTag:hover {
+    box-shadow: 0 4px 5px 0 rgb(0 0 0 / 14%), 0 1px 10px 0 rgb(0 0 0 / 12%), 0 2px 4px -1px rgb(0 0 0 / 30%);
+}

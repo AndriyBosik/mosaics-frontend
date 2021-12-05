@@ -1,0 +1,11 @@
+.SearchPanel .search-field {
+    max-width: 200px;
+    color: var(--main-color);
+    line-height: 30px !important;
+    height: 30px !important;
+    margin-top: 10px !important;
+}
+
+.SearchPanel .search-field::placeholder {
+    color: var(--main-color-opacity);
+}

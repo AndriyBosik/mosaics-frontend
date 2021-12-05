@@ -1,0 +1,49 @@
+import React from "react";
+import { useLink } from "../../hooks/useLink";
+import { Routes, Route } from "react-router-dom";
+import { pages } from "../../constants/pages";
+import Header from "../shared/Header/Header";
+import HomePage from "../HomePage/HomePage";
+import LoginPage from "../LoginPage/LoginPage";
+import RegisterPage from "../RegisterPage/RegisterPage";
+import CreateMosaicPage from "../CreateMosaicPage/CreateMosaicPage";
+import CreateTilePage from "../CreateTilePage/CreateTilePage";
+import ProfilePage from "../ProfilePage/ProfilePage";
+import EditTilePage from "../EditTilePage/EditTilePage";
+import SearchPage from "../SearchPage/SearchPage";
+import EditMosaicPage from "../EditMocaicPage/EditMosaicPage";
+
+function LayoutRoutes() {
+    const homePage = useLink(pages.home);
+    const loginPage = useLink(pages.login);
+    const registerPage = useLink(pages.register);
+    const createMosaicPage = useLink(pages.createMosaic);
+    const createTilePage = useLink(pages.createTile);
+    const profilePage = useLink(pages.profile);
+    const editTilePage = useLink(pages.editTile);
+    const searchPage = useLink(pages.search);
+    const editMosaicPage = useLink(pages.editMosaic);
+
+    return (
+        <>
+            <Header />
+            <main className="flex-auto s-vflex">
+                <Routes>
+                    {
+                        [homePage, "/"].map((link, index) => <Route key={index} path={link} element={<HomePage />} />)
+                    }
+                    <Route path={loginPage} exact element={<LoginPage />} />
+                    <Route path={registerPage} element={<RegisterPage />} />
+                    <Route path={createMosaicPage} element={<CreateMosaicPage />} />
+                    <Route path={createTilePage} element={<CreateTilePage />} />
+                    <Route path={profilePage} element={<ProfilePage />} />
+                    <Route path={editTilePage} element={<EditTilePage />} />
+                    <Route path={searchPage} element={<SearchPage />} />
+                    <Route path={editMosaicPage} element={<EditMosaicPage />} />
+                </Routes>
+            </main>
+        </>
+    );
+}
+
+export default LayoutRoutes;

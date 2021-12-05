@@ -1,0 +1,18 @@
+:root {
+    --profile-avatar-size: 130px;
+    --social-item-size: 25px;
+}
+
+.ProfileAvatar {
+    width: var(--profile-avatar-size);
+    height: var(--profile-avatar-size);
+}
+
+.ProfileNickname {
+    font-size: 20px;
+}
+
+.SocialItem {
+    height: var(--social-item-size);
+    width: var(--social-item-size);
+}
