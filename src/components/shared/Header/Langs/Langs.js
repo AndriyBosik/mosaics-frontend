@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from "react";
-import { generateUrl, parseUrl } from "../../../../handler/LinkHandler";
-import { history } from "./../../../../handler/HistoryHandler";
+import { generateUrl, parseUrl } from "../../../../handlers/LinkHandler";
+import { history } from "./../../../../handlers/HistoryHandler";
 import M from "materialize-css";
 import "./Langs.css";
-import { getSelectOptions } from "../../../../handler/html/SelectHandler";
+import { getSelectOptions } from "../../../../handlers/html/SelectHandler";
 
 function Langs() {
     const selectRef = useRef(null);

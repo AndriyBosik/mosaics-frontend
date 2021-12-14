@@ -1,3 +1,5 @@
 export const application = {
-    name: "Mozaїka"
+    name: "Mozaїka",
+    themeContainerId: "theme-container",
+    defaultTheme: "alternative"
 };

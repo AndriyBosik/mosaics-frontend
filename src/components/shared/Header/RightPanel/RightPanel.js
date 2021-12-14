@@ -3,7 +3,7 @@ import { user } from "../../../../stores/UserStore";
 import AuthLinks from "./AuthLinks";
 import UserProfileData from "./UserProfileData";
 import Langs from "./../Langs/Langs";
-import UserBoards from "../UserBoards/UserBoards";
+import UserMosaics from "../UserMosaics/UserMosaics";
 
 function RightPanel() {
     return (
@@ -12,7 +12,7 @@ function RightPanel() {
             {
                 user.authorized ? (
                     <>
-                        <UserBoards />
+                        <UserMosaics />
                         <UserProfileData />
                     </>
                 ) : (

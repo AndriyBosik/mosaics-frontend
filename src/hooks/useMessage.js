@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import { history } from "../handler/HistoryHandler";
-import { format } from "./../handler/StringHandler";
-import { getMessage } from "../handler/MessageHandler";
+import { history } from "../handlers/HistoryHandler";
+import { format } from "../handlers/StringHandler";
+import { getMessage } from "../handlers/MessageHandler";
 
 export const useMessage = (alias, data = {}) => {
     const [message, setMessage] = useState(format(getMessage(alias), translateData(data, window.location.pathname)));

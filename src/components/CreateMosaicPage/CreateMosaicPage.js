@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useMessage } from "./../../hooks/useMessage";
+import { getAllThemes } from "./../../services/ThemeService";
 import M from "materialize-css";
 
 function CreateMosaicPage() {
@@ -7,15 +8,20 @@ function CreateMosaicPage() {
 
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
-    const [theme, setTheme] = useState("");
+    const [themeId, setThemeId] = useState("");
+    const [themesList, setThemesList] = useState([]);
 
     useEffect(() => {
         M.updateTextFields();
+
+        setThemesList(getAllThemes());
     }, []);
 
     const createMosaic = event => {
         event.preventDefault();
-        console.log("Creating Mosaic...");
+        console.log("Creating Mosaic...", {
+            title, description, themeId
+        });
     }
 
     return (
@@ -36,8 +42,12 @@ function CreateMosaicPage() {
                                 <label htmlFor="description">{useMessage("description")}</label>
                             </div>
                             <div className="input-field full-width">
-                                <input id="theme" type="text" value={theme} onChange={event => setTheme(event.target.value)} />
-                                <label htmlFor="theme">{useMessage("theme")}</label>
+                                <select onChange={event => setThemeId(event.target.value)} defaultValue="-">
+                                    <option disabled value="-">{useMessage("choose_theme")}</option>
+                                    {
+                                        themesList.map(theme => <option key={theme.id} value={theme.id}>{theme.title}</option>)
+                                    }
+                                </select>
                             </div>
                             <div className="s-hflex-end">
                                 <button type="submit" className="btn waves-effect waves-light brown lighten-1">

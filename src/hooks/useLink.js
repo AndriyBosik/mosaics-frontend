@@ -1,6 +1,6 @@
 import { useLocation } from "react-router-dom";
-import { checkLanguage } from "../handler/LangHandler";
-import { parseUrl } from "./../handler/LinkHandler";
+import { checkLanguage } from "../handlers/LangHandler";
+import { parseUrl } from "./../handlers/LinkHandler";
 
 export const useLink = (to, language = null) => {
     const location = useLocation();

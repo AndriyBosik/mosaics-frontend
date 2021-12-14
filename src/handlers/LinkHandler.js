@@ -1,5 +1,5 @@
 import { localization } from "../constants/localization";
-import { checkLanguage } from "./../handler/LangHandler";
+import { checkLanguage } from "./../handlers/LangHandler";
 
 export const generateUrl = (to, lang = null) => {
     if (lang != null) {

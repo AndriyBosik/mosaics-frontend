@@ -1,4 +1,4 @@
-import { parseUrl } from "../handler/LinkHandler";
+import { parseUrl } from "../handlers/LinkHandler";
 import { messages } from "../constants/messages";
 
 export const getMessage = (alias, pathname = null) => {

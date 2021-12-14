@@ -1,4 +1,6 @@
 import React from "react";
+import { application } from "./../../constants/application";
+import { extractTheme } from "../../handlers/ThemeHandler";
 import { useLink } from "../../hooks/useLink";
 import { Routes, Route } from "react-router-dom";
 import { pages } from "../../constants/pages";
@@ -25,7 +27,7 @@ function LayoutRoutes() {
     const editMosaicPage = useLink(pages.editMosaic);
 
     return (
-        <>
+        <div id={application.themeContainerId} className={extractTheme()}>
             <Header />
             <main className="flex-auto s-vflex">
                 <Routes>
@@ -42,7 +44,7 @@ function LayoutRoutes() {
                     <Route path={editMosaicPage} element={<EditMosaicPage />} />
                 </Routes>
             </main>
-        </>
+        </div>
     );
 }
 

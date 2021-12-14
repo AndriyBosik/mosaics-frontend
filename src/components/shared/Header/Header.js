@@ -9,7 +9,7 @@ function Header() {
         <header>
             <div className="navbar-fixed">
                 <nav id="navbar" className="navbar">
-                    <div className="nav-wrapper orange lighten-3">
+                    <div className="nav-wrapper">
                         <div className="container">
                             <div className="row">
                                 <div className="full-width s-hflex">

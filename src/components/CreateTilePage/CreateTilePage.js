@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import TilePhoto from "../EditTilePage/TilePhoto/TilePhoto";
+import { Link } from "react-router-dom";
 import { useMessage } from "./../../hooks/useMessage";
 import M from "materialize-css";
 
@@ -36,6 +37,7 @@ function CreateTilePage() {
                 <div className="row pt30">
                     <div className="col s12 m4">
                         <TilePhoto tile={tile} />
+                        <Link to="/en/mosaics/create">Test link</Link>
                     </div>
                     <div className="col s12 m8 mosaic-form">
                         <form onSubmit={createTile}>

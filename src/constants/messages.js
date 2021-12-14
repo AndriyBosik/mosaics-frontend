@@ -48,10 +48,10 @@ export const messages = {
         [RU]: "Создать",
         [UA]: "Створити"
     },
-    choose_board: {
-        [EN]: "Choose board",
-        [RU]: "Выберите доску",
-        [UA]: "Виберіть дошку"
+    choose_mosaic: {
+        [EN]: "Choose mosaic",
+        [RU]: "Выберите мозаику",
+        [UA]: "Виберіть мозаїку"
     },
     link: {
         [EN]: "Link",
@@ -142,5 +142,10 @@ export const messages = {
         [EN]: "Tag",
         [RU]: "Тег",
         [UA]: "Тег"
+    },
+    choose_theme: {
+        [EN]: "Choose theme",
+        [RU]: "Виберите тему",
+        [UA]: "Виберіть тему"
     }
 };
