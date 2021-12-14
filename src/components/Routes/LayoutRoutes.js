@@ -14,6 +14,7 @@ import ProfilePage from "../ProfilePage/ProfilePage";
 import EditTilePage from "../EditTilePage/EditTilePage";
 import SearchPage from "../SearchPage/SearchPage";
 import EditMosaicPage from "../EditMocaicPage/EditMosaicPage";
+import PermissionBoundary from "../PermissionBoundary/PermissionBoundary";
 
 function LayoutRoutes() {
     const homePage = useLink(pages.home);
@@ -28,22 +29,24 @@ function LayoutRoutes() {
 
     return (
         <div id={application.themeContainerId} className={extractTheme()}>
-            <Header />
-            <main className="flex-auto s-vflex">
-                <Routes>
-                    {
-                        [homePage, "/"].map((link, index) => <Route key={index} path={link} element={<HomePage />} />)
-                    }
-                    <Route path={loginPage} exact element={<LoginPage />} />
-                    <Route path={registerPage} element={<RegisterPage />} />
-                    <Route path={createMosaicPage} element={<CreateMosaicPage />} />
-                    <Route path={createTilePage} element={<CreateTilePage />} />
-                    <Route path={profilePage} element={<ProfilePage />} />
-                    <Route path={editTilePage} element={<EditTilePage />} />
-                    <Route path={searchPage} element={<SearchPage />} />
-                    <Route path={editMosaicPage} element={<EditMosaicPage />} />
-                </Routes>
-            </main>
+            <PermissionBoundary>
+                <Header />
+                <main className="flex-auto s-vflex">
+                    <Routes>
+                        {
+                            [homePage, "/"].map((link, index) => <Route key={index} path={link} element={<HomePage />} />)
+                        }
+                        <Route path={loginPage} exact element={<LoginPage />} />
+                        <Route path={registerPage} element={<RegisterPage />} />
+                        <Route path={createMosaicPage} element={<CreateMosaicPage />} />
+                        <Route path={createTilePage} element={<CreateTilePage />} />
+                        <Route path={profilePage} element={<ProfilePage />} />
+                        <Route path={editTilePage} element={<EditTilePage />} />
+                        <Route path={searchPage} element={<SearchPage />} />
+                        <Route path={editMosaicPage} element={<EditMosaicPage />} />
+                    </Routes>
+                </main>
+            </PermissionBoundary>
         </div>
     );
 }

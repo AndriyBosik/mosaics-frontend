@@ -147,5 +147,10 @@ export const messages = {
         [EN]: "Choose theme",
         [RU]: "Виберите тему",
         [UA]: "Виберіть тему"
+    },
+    error: {
+        [EN]: "Error",
+        [RU]: "Ошибка",
+        [UA]: "Помилка"
     }
 };
