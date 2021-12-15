@@ -1,6 +1,6 @@
 import { pages } from "./../constants/pages";
 import { getUserRole } from "./UserHandler";
-import { matchPath } from "react-router-dom";
+import UrlPattern from "url-pattern";
 
 const permissions = {
     [pages.home]: ["guest", "user"],
@@ -29,12 +29,8 @@ const checkPermissionForRole = (url, role) => {
 const tryBruteForce = (requestUrl, role) => {
     const urls = Object.keys(permissions);
     for (const url of urls) {
-        const match = matchPath(requestUrl, {
-            path: url,
-            exact: true,
-            strict: false
-        });
-        if (match != null) {
+        const urlPattern = new UrlPattern(url);
+        if (urlPattern.match(requestUrl) != null) {
             return permissions[url].includes(role);
         }
     }
