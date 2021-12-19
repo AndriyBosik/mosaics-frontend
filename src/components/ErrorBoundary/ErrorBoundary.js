@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import { pages } from '../../constants/pages';
+import PageNotFound from '../PageNotFound/PageNotFound';
+import HomeLink from './../HomeLink/HomeLink';
 
 class ErrorBoundary extends Component {
 
@@ -14,6 +14,7 @@ class ErrorBoundary extends Component {
     }
 
     static getDerivedStateFromError(error) {
+        console.log(error);
         return {
             error: error,
             hasError: true
@@ -22,14 +23,17 @@ class ErrorBoundary extends Component {
 
     render() {
         if (this.state.hasError) {
+            if (this.state.error.code === 404) {
+                return (
+                    <img src="./errors/404.png" alt="page_not_found" className="equal-flex" />
+                );
+            }
             return (
                 <div className="full-width center-align">
                     <div className="window-height s-vflex-center">
                         <h1>Error Happened</h1>
                         <div className="center-align">
-                            <Link to={pages.home} className="btn amber darken-3">
-                                Go Home
-                            </Link>
+                            <HomeLink />
                         </div>
                     </div>
                 </div>

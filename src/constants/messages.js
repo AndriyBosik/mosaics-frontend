@@ -157,5 +157,10 @@ export const messages = {
         [EN]: "Error",
         [RU]: "Ошибка",
         [UA]: "Помилка"
+    },
+    page_not_found: {
+        [EN]: "Page not found",
+        [RU]: "Страница не найдена",
+        [UA]: "Сторінку не знайдено"
     }
 };
