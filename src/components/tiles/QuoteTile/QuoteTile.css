@@ -1,0 +1,5 @@
+.QuoteTile {
+    border: 1px solid var(--main-color-opacity);
+    color: var(--main-color);
+    font-style: italic;
+}

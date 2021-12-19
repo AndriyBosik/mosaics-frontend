@@ -9,6 +9,7 @@ function ProfilePage() {
     document.title = useMessage("profile");
 
     const { nickname } = useParams();
+    console.log(nickname);
 
     const user = users.find(user => user.nickname === nickname);
 

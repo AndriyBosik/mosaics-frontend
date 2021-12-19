@@ -17,8 +17,8 @@ const PermissionBoundary = ({children}) => {
     }, [url]);
 
     useEffect(() => {
-        const disposer = history.listen(location => {
-            const [, url] = parseUrl(location.pathname);
+        const disposer = history.listen(history => {
+            const [, url] = parseUrl(history.location.pathname);
             setAllowed(checkPermission(url) ? 1 : -1);
         });
 

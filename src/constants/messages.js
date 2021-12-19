@@ -8,6 +8,11 @@ export const messages = {
         [RU]: "Логин",
         [UA]: "Логін"
     },
+    logout: {
+        [EN]: "Logout",
+        [RU]: "Выйти",
+        [UA]: "Вихід"
+    },
     register: {
         [EN]: "Register",
         [RU]: "Зарегистрироваться",

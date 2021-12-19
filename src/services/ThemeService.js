@@ -1,3 +1,4 @@
+import { application} from "../constants/application";
 import { themes } from "./../data/themes";
 import { mosaics } from "./../data/mosaics";
 
@@ -11,5 +12,8 @@ export const getThemeById = themeId => {
 
 export const getThemeByMosaicId = mosaicId => {
     const mosaic = mosaics.find(mosaic => mosaic.id*1 === mosaicId*1);
+    if (typeof mosaic === "undefined") {
+        return application.defaultTheme;
+    }
     return getThemeById(mosaic.theme_id);
 }
