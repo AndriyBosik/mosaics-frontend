@@ -162,5 +162,10 @@ export const messages = {
         [EN]: "Page not found",
         [RU]: "Страница не найдена",
         [UA]: "Сторінку не знайдено"
+    },
+    invalid_auth_data: {
+        [EN]: "Invalid nickname or password",
+        [RU]: "Неверный ник или пароль",
+        [UA]: "Невірний нік або пароль"
     }
 };

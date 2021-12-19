@@ -1,6 +1,6 @@
 import { pages } from "./../constants/pages";
-import { getUserRole } from "./UserHandler";
 import UrlPattern from "url-pattern";
+import { getUser } from "../states/UserState";
 
 const permissions = {
     [pages.home]: ["guest", "user"],
@@ -15,7 +15,8 @@ const permissions = {
 };
 
 export const checkPermission = url => {
-    const role = getUserRole();
+    const user = getUser();
+    const role = user == null ? "guest" : "user";
     return checkPermissionForRole(url, role);
 }
 

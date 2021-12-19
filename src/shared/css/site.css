@@ -1,6 +1,7 @@
 :root {
     --main-color: #806464;
     --main-color-opacity: #cb9999;
+    --header-height: 50px;
 }
 
 body {

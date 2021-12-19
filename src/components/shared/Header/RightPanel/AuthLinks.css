@@ -1,3 +1,7 @@
 .AuthLink a i.material-icons {
     line-height: unset;
 }
+
+.AuthLink {
+    height: var(--header-height) !important;
+}

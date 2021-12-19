@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from "react";
 import M from "materialize-css";
 import { useMessage } from "../../hooks/useMessage";
+import { useLink } from "./../../hooks/useLink";
+import { loginUser } from "./../../services/UserService";
+import { initUser } from "../../states/UserState";
+import { pages } from "./../../constants/pages";
+import { useNavigate } from "react-router-dom";
 
 function LoginPage() {
     document.title = useMessage("login");
@@ -8,13 +13,24 @@ function LoginPage() {
     const [login, setLogin] = useState("");
     const [password, setPassword] = useState("");
 
+    const homePage = useLink(pages.home);
+    const navigate = useNavigate();
+    const invalidData = useMessage("invalid_auth_data");
+
     useEffect(() => {
         M.updateTextFields();
     }, []);
 
     const tryLogin = event => {
         event.preventDefault();
-        console.log("Login...", login, password);
+        const user = loginUser(login, password);
+        console.log(user);
+        if (user != null) {
+            initUser(user);
+            navigate(homePage);
+        } else {
+            M.toast({html: invalidData});
+        }
     }
 
     return (

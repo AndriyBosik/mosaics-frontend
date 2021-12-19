@@ -1,16 +1,18 @@
 import React from "react";
-import { user } from "../../../../stores/UserStore";
 import AuthLinks from "./AuthLinks";
 import UserProfileData from "./UserProfileData";
 import Langs from "./../Langs/Langs";
 import UserMosaics from "../UserMosaics/UserMosaics";
+import { getUser } from "./../../../../states/UserState";
 
 function RightPanel() {
+    const user = getUser();
+
     return (
         <div className="s-hflex-end">
             <Langs />
             {
-                user.authorized ? (
+                user != null ? (
                     <>
                         <UserMosaics />
                         <UserProfileData />
