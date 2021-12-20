@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { user } from "./../../../../stores/UserStore";
 import { pages } from "../../../../constants/pages";
 import { useMessage } from "../../../../hooks/useMessage";
 import "./UserProfileData.css";
@@ -11,7 +10,7 @@ import { getUser, destroyUser } from "./../../../../states/UserState";
 
 function UserProfileData() {
     useEffect(() => {
-        M.Dropdown.init(document.querySelectorAll(".dropdown-trigger"));
+        M.Dropdown.init(document.querySelectorAll(".dropdown-trigger"), {});
     }, []);
 
     const user = getUser();

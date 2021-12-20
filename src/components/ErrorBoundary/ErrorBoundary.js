@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PageNotFound from '../PageNotFound/PageNotFound';
 import HomeLink from './../HomeLink/HomeLink';
 
 class ErrorBoundary extends Component {
@@ -14,7 +13,6 @@ class ErrorBoundary extends Component {
     }
 
     static getDerivedStateFromError(error) {
-        console.log(error);
         return {
             error: error,
             hasError: true

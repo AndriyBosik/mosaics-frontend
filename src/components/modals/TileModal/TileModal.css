@@ -1,0 +1,9 @@
+.TileModal .user-avatar {
+    height: var(--avatar-size);
+    width: var(--avatar-size);
+}
+
+.TileModal .profile-link {
+    overflow: auto;
+    display: block;
+}

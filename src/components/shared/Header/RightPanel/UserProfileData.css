@@ -1,7 +1,3 @@
-:root {
-    --avatar-size: 40px;
-}
-
 .UserProfileData .user-avatar {
     height: var(--avatar-size);
     width: var(--avatar-size);

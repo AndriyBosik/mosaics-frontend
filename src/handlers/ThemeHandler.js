@@ -9,7 +9,6 @@ export const setTheme = theme => {
 
 export const setThemeWithoutSaving = theme => {
     const themeContainer = document.getElementById(application.themeContainerId);
-    console.log("theme:", theme);
     themeContainer.className = theme.title;
 }
 

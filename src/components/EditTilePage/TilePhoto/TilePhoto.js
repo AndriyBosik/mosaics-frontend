@@ -1,5 +1,5 @@
 import React from "react";
-import TileTag from "./TileTag/TileTag";
+import TileTag from "../../TileTag/TileTag";
 
 function TilePhoto({tile}) {
     return (
@@ -7,7 +7,7 @@ function TilePhoto({tile}) {
             <img src={tile.url} alt="tile" className="full-width z-depth-1" />
             <div className="tags pt5">
                 {
-                    tile.tags.map((tag, index) => <TileTag key={index} tag={tag} />)
+                    tile.tags.map((tag, index) => <TileTag key={index} tag={tag} showCloseButton={true} />)
                 }
             </div>
         </div>

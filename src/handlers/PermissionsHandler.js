@@ -31,9 +31,8 @@ const tryBruteForce = (requestUrl, role) => {
     const urls = Object.keys(permissions);
     for (const url of urls) {
         const urlPattern = new UrlPattern(url, {
-            segmentValueCharset: "a-zA-Z0-9."
+            segmentValueCharset: "a-zA-Z0-9._"
         });
-        console.log(requestUrl, urlPattern.match(requestUrl));
         if (urlPattern.match(requestUrl) != null) {
             return permissions[url].includes(role);
         }

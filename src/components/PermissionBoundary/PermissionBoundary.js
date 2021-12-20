@@ -4,7 +4,6 @@ import { checkPermission } from "./../../handlers/PermissionsHandler";
 import { history } from "./../../handlers/HistoryHandler";
 import { parseUrl } from "./../../handlers/LinkHandler";
 import LoadingPage from "./../LoadingPage/LoadingPage";
-import { Children } from "react/cjs/react.production.min";
 
 const PermissionBoundary = ({children}) => {
     const [, url] = parseUrl(window.location.pathname);

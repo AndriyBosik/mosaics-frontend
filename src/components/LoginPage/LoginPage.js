@@ -24,7 +24,6 @@ function LoginPage() {
     const tryLogin = event => {
         event.preventDefault();
         const user = loginUser(login, password);
-        console.log(user);
         if (user != null) {
             initUser(user);
             navigate(homePage);
