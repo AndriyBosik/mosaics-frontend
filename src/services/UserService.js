@@ -9,6 +9,10 @@ export const loginUser = (login, password) => {
     return user != null && user.password === password ? removePasswordFromUser(user) : null;
 }
 
+export const getUsersByNicknameLike = nickname => {
+    return users.filter(user => user.nickname.toLowerCase().includes(nickname.toLowerCase()));
+}
+
 const removePasswordFromUser = user => {
     return {
         ...user,
