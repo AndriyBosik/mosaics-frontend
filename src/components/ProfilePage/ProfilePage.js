@@ -16,7 +16,7 @@ function ProfilePage() {
 
     const user = users.find(user => user.nickname === nickname);
 
-    const isAuthorized = user.nickname === getUser().nickname;
+    const isAuthorized = typeof user !== "undefined" && getUser() != null && user.nickname === getUser().nickname;
 
     return (
         <div className="window-width flex-auto">
