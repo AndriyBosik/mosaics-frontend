@@ -2,7 +2,15 @@
     background-color: #7F95D1;
 }
 
+.alternative .bg-color {
+    background-color: #7F95D1;
+}
+
 .antique .navbar .nav-wrapper {
+    background-color: #DDBEA9;
+}
+
+.antique .bg-color {
     background-color: #DDBEA9;
 }
 
@@ -10,6 +18,14 @@
     background-color: #A4161A;
 }
 
+.bloody .bg-color {
+    background-color: #A4161A;
+}
+
 .bright .navbar .nav-wrapper {
+    background-color: #2EB57C;
+}
+
+.bright .bg-color {
     background-color: #2EB57C;
 }

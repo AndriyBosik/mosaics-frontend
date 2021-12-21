@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useMessage } from "../../hooks/useMessage";
 import UserData from "./UserData/UserData";
 import ImageTabs from "./ImageTabs/ImageTabs";
+import AddTileButton from "./AddTileButton/AddTileButton";
 import { useParams } from "react-router-dom";
 import { users } from "./../../data/users";
 import { tiles } from "./../../data/tiles";
@@ -15,13 +16,18 @@ function ProfilePage() {
 
     const user = users.find(user => user.nickname === nickname);
 
+    const isAuthorized = user.nickname === getUser().nickname;
+
     return (
         <div className="window-width flex-auto">
+            {
+                isAuthorized ? <AddTileButton /> : null
+            }
             <div className="container">
                 <div className="row pt30">
                     <UserData user={user} />
                     <div className="full-width"></div>
-                    <ImageTabs editableImages={user.nickname === getUser().nickname} tiles={tiles} mosaics={mosaics} />
+                    <ImageTabs editableImages={isAuthorized} tiles={tiles} mosaics={mosaics} />
                 </div>
             </div>
         </div>
