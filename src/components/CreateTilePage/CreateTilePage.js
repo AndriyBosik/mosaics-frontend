@@ -37,7 +37,6 @@ function CreateTilePage() {
                 <div className="row pt30">
                     <div className="col s12 m4">
                         <TilePhoto tile={tile} />
-                        <Link to="/en/mosaics/create">Test link</Link>
                     </div>
                     <div className="col s12 m8 mosaic-form">
                         <form onSubmit={createTile}>
