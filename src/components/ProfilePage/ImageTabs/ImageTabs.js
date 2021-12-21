@@ -1,20 +1,31 @@
 import React, { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { useMessage } from "../../../hooks/useMessage";
+import { useLink } from "./../../../hooks/useLink";
+import { pages } from "./../../../constants/pages";
+import { formatLink } from "../../../handlers/StringHandler";
 import Masonry from "react-masonry-component";
 import M from "materialize-css";
 import "./ImageTabs.css";
 import ImageCard from "./../../ImageCard/ImageCard";
+import { generateUrl } from "../../../handlers/LinkHandler";
 
 const masonryOptions = {
     transitionDuration: 0
 };
 
-function ImageTabs({tiles}) {
+function ImageTabs({tiles, mosaics}) {
     const [value, setValue] = useState(0);
 
     useEffect(() => {
         M.Tabs.init(document.querySelectorAll(".tabs"));
     }, []);
+
+    const navigate = useNavigate();
+
+    const navigateToTiles = id => {
+        navigate(generateUrl(formatLink(pages.mosaicTiles, {id: id})));
+    }
 
     return (
         <div id={`image-tabs-${value}`} className="pt20 ImageTabs">
@@ -32,7 +43,7 @@ function ImageTabs({tiles}) {
                 <Masonry className={'gallery'} options={masonryOptions} updateOnEachImageLoad={true}>
                     
                     {
-                        tiles.map(tile => <ImageCard key={tile.id} responsiveClassName="col m4 s6" imageUrl={tile.url} imageAlt="tile" />)
+                        tiles.map(tile => <ImageCard isClickable={false} key={tile.id} responsiveClassName="col m4 s6" imageUrl={tile.url} imageAlt="tile" />)
                     }
 
                 </Masonry>
@@ -40,16 +51,13 @@ function ImageTabs({tiles}) {
             <div id="mosaics" className="full-width">
                 <Masonry className={'gallery'} options={masonryOptions} updateOnEachImageLoad={true}>
 
-                    <ImageCard responsiveClassName="col m4 s6" imageUrl="/mosaics/mosaics-1.jpeg" imageAlt="mosaic" />
-                    <ImageCard responsiveClassName="col m4 s6" imageUrl="/mosaics/mosaics-2.jpeg" imageAlt="mosaic" />
-                    <ImageCard responsiveClassName="col m4 s6" imageUrl="/mosaics/mosaics-3.jpeg" imageAlt="mosaic" />
-                    <ImageCard responsiveClassName="col m4 s6" imageUrl="/mosaics/mosaics-4.jpeg" imageAlt="mosaic" />
-                    <ImageCard responsiveClassName="col m4 s6" imageUrl="/mosaics/mosaics-5.jpeg" imageAlt="mosaic" />
-                    <ImageCard responsiveClassName="col m4 s6" imageUrl="/mosaics/mosaics-6.jpeg" imageAlt="mosaic" />
-                    <ImageCard responsiveClassName="col m4 s6" imageUrl="/mosaics/mosaics-7.jpeg" imageAlt="mosaic" />
-                    <ImageCard responsiveClassName="col m4 s6" imageUrl="/mosaics/mosaics-8.jpeg" imageAlt="mosaic" />
-                    <ImageCard responsiveClassName="col m4 s6" imageUrl="/mosaics/mosaics-9.jpeg" imageAlt="mosaic" />
-                    <ImageCard responsiveClassName="col m4 s6" imageUrl="/mosaics/mosaics-10.jpeg" imageAlt="mosaic" />
+                    {
+                        mosaics.map((mosaic, index) => 
+                            <div key={mosaic.id} className="col m4 s6" onClick={event => navigateToTiles(mosaic.id)}>
+                                <ImageCard responsiveClassName="full-width" imageUrl={mosaic.url} imageAlt="mosaic" />
+                            </div>
+                        )
+                    }
 
                 </Masonry>
             </div>

@@ -11,7 +11,8 @@ const permissions = {
     [pages.profile]: ["guest", "user"],
     [pages.editTile]: ["user"],
     [pages.search]: ["guest", "user"],
-    [pages.editMosaic]: ["user"]
+    [pages.editMosaic]: ["user"],
+    [pages.mosaicTiles]: ["user", "guest"]
 };
 
 export const checkPermission = url => {

@@ -15,6 +15,7 @@ import EditTilePage from "../EditTilePage/EditTilePage";
 import SearchPage from "../SearchPage/SearchPage";
 import EditMosaicPage from "../EditMocaicPage/EditMosaicPage";
 import PermissionBoundary from "../PermissionBoundary/PermissionBoundary";
+import MosaicTilesPage from "../MosaicTilesPage/MosaicTilesPage";
 
 function LayoutRoutes() {
     const homePage = useLink(pages.home);
@@ -26,6 +27,7 @@ function LayoutRoutes() {
     const editTilePage = useLink(pages.editTile);
     const searchPage = useLink(pages.search);
     const editMosaicPage = useLink(pages.editMosaic);
+    const mosaicTilesPage = useLink(pages.mosaicTiles);
 
     return (
         <div id={application.themeContainerId} className={extractTheme()}>
@@ -44,6 +46,7 @@ function LayoutRoutes() {
                         <Route path={editTilePage} element={<EditTilePage />} />
                         <Route path={searchPage} element={<SearchPage />} />
                         <Route path={editMosaicPage} element={<EditMosaicPage />} />
+                        <Route path={mosaicTilesPage} element={<MosaicTilesPage />} />
                     </Routes>
                 </main>
             </PermissionBoundary>

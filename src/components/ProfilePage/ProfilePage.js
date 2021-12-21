@@ -5,15 +5,10 @@ import ImageTabs from "./ImageTabs/ImageTabs";
 import { useParams } from "react-router-dom";
 import { users } from "./../../data/users";
 import { tiles } from "./../../data/tiles";
+import { mosaics } from "./../../data/mosaics";
 
 function ProfilePage() {
     document.title = useMessage("profile");
-
-    const [tilesList, setTilesList] = useState([]);
-
-    useEffect(() => {
-        setTilesList(tiles);
-    }, [tiles]);
 
     const { nickname } = useParams();
 
@@ -25,7 +20,7 @@ function ProfilePage() {
                 <div className="row pt30">
                     <UserData user={user} />
                     <div className="full-width"></div>
-                    <ImageTabs tiles={tilesList} />
+                    <ImageTabs tiles={tiles} mosaics={mosaics} />
                 </div>
             </div>
         </div>

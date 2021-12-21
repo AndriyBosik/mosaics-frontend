@@ -14,3 +14,11 @@ export const getUserMosaicsWithThemes = userId => {
 export const getMosaicById = mosaicId => {
     return mosaics.find(mosaic => mosaic.id*1 === mosaicId*1);
 }
+
+export const getMosaicTiles = mosaicId => {
+    const mosaic = getMosaicById(mosaicId);
+    if (typeof mosaics == "undefined") {
+        return [];
+    }
+    return mosaic.tiles;
+}

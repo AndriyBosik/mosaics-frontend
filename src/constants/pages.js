@@ -7,5 +7,6 @@ export const pages = {
     profile: "/profile/:nickname",
     editTile: "/tiles/edit/:id",
     search: "/search",
-    editMosaic: "/mosaics/edit/:id"
+    editMosaic: "/mosaics/edit/:id",
+    mosaicTiles: "/mosaics/:id/tiles"
 };

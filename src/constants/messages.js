@@ -167,5 +167,15 @@ export const messages = {
         [EN]: "Invalid nickname or password",
         [RU]: "Неверный ник или пароль",
         [UA]: "Невірний нік або пароль"
+    },
+    open_resource: {
+        [EN]: "Open resource",
+        [RU]: "Открыть ресурс",
+        [UA]: "Відкрити ресурс"
+    },
+    view_tiles: {
+        [EN]: "View tiles",
+        [RU]: "Просмотреть плитки",
+        [UA]: "Переглянути плитки"
     }
 };
