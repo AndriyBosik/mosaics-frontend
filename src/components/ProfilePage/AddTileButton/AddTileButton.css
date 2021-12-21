@@ -1,5 +1,5 @@
 .AddTileButton {
-    position: absolute !important;
+    position: fixed !important;
     bottom: 20px;
     right: 20px;
     opacity: 0.6;
