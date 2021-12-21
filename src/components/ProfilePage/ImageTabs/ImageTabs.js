@@ -14,7 +14,7 @@ const masonryOptions = {
     transitionDuration: 0
 };
 
-function ImageTabs({tiles, mosaics}) {
+function ImageTabs({tiles, mosaics, editableImages = false}) {
     const [value, setValue] = useState(0);
 
     useEffect(() => {
@@ -25,6 +25,14 @@ function ImageTabs({tiles, mosaics}) {
 
     const navigateToTiles = id => {
         navigate(generateUrl(formatLink(pages.mosaicTiles, {id: id})));
+    }
+
+    const navigateToEditMosaicPage = mosaicId => {
+        navigate(generateUrl(formatLink(pages.editMosaic, {id: mosaicId})));
+    }
+
+    const navigateToEditTilePage = tileId => {
+        navigate(generateUrl(formatLink(pages.editTile, {id: tileId})));
     }
 
     return (
@@ -43,7 +51,7 @@ function ImageTabs({tiles, mosaics}) {
                 <Masonry className={'gallery'} options={masonryOptions} updateOnEachImageLoad={true}>
                     
                     {
-                        tiles.map(tile => <ImageCard isClickable={false} key={tile.id} responsiveClassName="col m4 s6" imageUrl={tile.url} imageAlt="tile" />)
+                        tiles.map(tile => <ImageCard editClickCallback={() => navigateToEditTilePage(tile.id)} editable={editableImages} isClickable={false} key={tile.id} responsiveClassName="col m4 s6" imageUrl={tile.url} imageAlt="tile" />)
                     }
 
                 </Masonry>
@@ -53,8 +61,8 @@ function ImageTabs({tiles, mosaics}) {
 
                     {
                         mosaics.map((mosaic, index) => 
-                            <div key={mosaic.id} className="col m4 s6" onClick={event => navigateToTiles(mosaic.id)}>
-                                <ImageCard responsiveClassName="full-width" imageUrl={mosaic.url} imageAlt="mosaic" />
+                            <div key={mosaic.id} className="col m4 s6" onClick={() => navigateToTiles(mosaic.id)}>
+                                <ImageCard editClickCallback={() => navigateToEditMosaicPage(mosaic.id)} editable={editableImages} responsiveClassName="full-width" imageUrl={mosaic.url} imageAlt="mosaic" />
                             </div>
                         )
                     }
